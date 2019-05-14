@@ -1,0 +1,113 @@
+:root {
+  --c-first: tomato;
+  --c-second: rgba(0,0,0,0.5);
+}
+
+body{
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button{
+  padding: 1em 1.5em;
+  background-color: var(--c-first);
+  color: white;
+  margin: 2em;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.underline{
+  position: relative
+}
+
+.underline:after{
+  content: "";
+  position: absolute;
+  width: 0;
+  background-color: var(--c-second);
+  margin: auto;
+  bottom: 0;
+  height: 5px;
+  left: 0;
+  right: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.underline:hover:after{
+  width: 100%
+}
+
+/* buzz-out */
+
+/* bounce-right */
+
+.bounce-right{
+  position: relative;
+  color: white
+}
+
+.bounce-right .value{
+  position: relative;
+  z-index: 2;
+  transition: all 1s;
+}
+
+.bounce-right:before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  background-color: var(--c-second);
+  z-index: 0.25;
+}
+
+.bounce-right:hover:before{
+  animation: bounce-right 1s forwards;
+}
+
+.bounce-right:hover .value{
+  color: var(--c-first);
+}
+
+/* buzz-out */
+.buzz-out{
+
+}
+
+.buzz-out:hover{
+  transform: roate
+}
+
+
+/* keyframes */
+
+@keyframes bounce-right{
+  0%{
+    width: 0%;
+  }
+  40%{
+    width: 100%;
+  }
+  58%{
+    width: 65%;
+  }
+  75%{
+    width: 100%;
+  }
+  85%{
+    width: 85%;
+  }
+  100%{
+    width: 100%;
+  }
+}
