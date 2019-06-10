@@ -1,6 +1,10 @@
 import React from "react";
 
 function useGetVisivility() {
+  const [name, setName] = React.useState("Paul");
+
+  setName("Angie");
+
   const [isVisible, setIsVisible] = React.useState(document.visibilityState);
   const [list, setList] = React.useState([
     <li key={Date.now()}>

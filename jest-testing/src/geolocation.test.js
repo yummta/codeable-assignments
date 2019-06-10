@@ -2,6 +2,7 @@ import geolocation from "./geolocation";
 
 jest.mock("get-geolocation");
 
-test("valid return", () => {
-  expect(geolocation()).toEqual(expect.any(Promise));
+test("valid return", async () => {
+  const value = await geolocation();
+  expect(value).toEqual("dataaa");
 });
